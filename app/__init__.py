@@ -17,3 +17,8 @@ def abc():
                 data=data,
                 status=200
             )
+
+@app.route("/test")
+def test():
+    data = "Pavithran"
+    return flask.render_template("/test.html",info = data)
