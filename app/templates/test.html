@@ -1,3 +1,25 @@
-<p>
-  hello {{info}}
-</p>
+<style>
+    table,th,td {
+      padding: 10px;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+</style>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>url</th>
+        <th>lastlogin</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in info %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
