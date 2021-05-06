@@ -1,25 +1,57 @@
-<style>
-    table,th,td {
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Table data </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+</head>
+
+<body>
+  <style>
+    #div1{
       padding: 10px;
-      border: 1px solid black;
-      border-collapse: collapse;
+      border: 2px solid black;
     }
-</style>
-<table>
-    <thead>
-    <tr>
-        <th>id</th>
-        <th>url</th>
-        <th>lastlogin</th>
-    </tr>
-    </thead>
-    <tbody>
+  </style>
+  <script>
+    $(document).ready(function() {
+      $('#table1').DataTable();
+    });
+  </script>
+  <div id="div1">
+    <table id="table1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Profession</th>
+          <th>Account Type</th>
+          <th>Subscription EndDate</th>
+          <th>URL</th>
+          <th>Id</th>
+        </tr>
+      </thead>
+      <tbody>
         {% for row in info %}
-            <tr>
-                <td>{{row[0]}}</td>
-                <td>{{row[1]}}</td>
-                <td>{{row[2]}}</td>
-            </tr>
+        <tr>
+          <td>{{row[0]}}</td>
+          <td>{{row[1]}}</td>
+          <td>{{row[2]}}</td>
+          <td>{{row[3]}}</td>
+          <td>{{row[4]}}</td>
+          <td>{{row[5]}}</td>
+          <td>{{row[6]}}</td>
+        </tr>
         {% endfor %}
-    </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+
+
+
+</body>
+
+</html>

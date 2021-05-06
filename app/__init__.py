@@ -24,7 +24,7 @@ def test():
     server = "postgres://mmojyviutqpftt:9708f3980b74c50a5d4d3ae9713254561626628fde9b23e19e92bfda0ba63b23@ec2-34-233-0-64.compute-1.amazonaws.com:5432/d6pleq228gs43m"
     connection = psycopg2.connect(server,sslmode = "require")
     cursor = connection.cursor()
-    query = "SELECT id,url,lastlogin FROM students ORDER BY id ASC"
+    query = "SELECT students.alias,subscriptions.location, subscriptions.profession, subscriptions.subscriptiontype, subscriptions.enddate, students.url, students.id FROM public.students INNER JOIN public.subscriptions ON students.id=subscriptions.id"
     cursor.execute(query)
     results = cursor.fetchall()
     return flask.render_template("/test.html",info = results)
